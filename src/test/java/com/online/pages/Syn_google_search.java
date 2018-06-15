@@ -24,9 +24,21 @@ public class Syn_google_search extends PageBase {
 
 	WebDriver driver;
 	// Web Element for Google Search Box
-	@FindBy(name = "q")
+    @FindBy(name = "q")
 	WebElement searchBox;
-	
+    
+ // Web Element for email
+    @FindBy(id = "email")
+   	WebElement emailaddress;
+    
+ // Web Element for email
+    @FindBy(id = "password")
+   	WebElement EPpassword;
+    
+ // Web Element for email
+    @FindBy(xpath = "//input[@value='Sign in']")
+   	WebElement EPSignIn;
+    
 	// Web Element for Google Search first option
 	@FindBy(xpath = "//*[@id='sbse0']/div[2]")
 	WebElement searchFirstOption;
@@ -36,6 +48,26 @@ public class Syn_google_search extends PageBase {
 	 * @return 
 	 *******************************************************************************************/
 
+	
+    public void enter_emailaddress(String enterpriseemal){
+    	PageBase.wait(4);
+		log.info("Enter text for email address: "+enterpriseemal);
+		searchBox.sendKeys(enterpriseemal);
+		
+	}
+	
+    public void enter_Password_EP_Portal(String Enterprisepassword){
+		
+  		log.info("Enter text for Password: "+Enterprisepassword);
+  		searchBox.sendKeys(Enterprisepassword);
+  		
+  	}
+    
+    public void click_on_login_EP_Portal(){
+		log.info("Click on Sign In on EP Portal:");
+		EPSignIn.click();
+  		
+  	}
 	
 	public void enter_text(String Search_text){
 		

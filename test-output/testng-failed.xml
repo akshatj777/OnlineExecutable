@@ -1,14 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="Failed suite [Default suite]">
-  <test name="Default test(failed)">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Synerzip-TestAutomation-SanitySuite]">
+  <test name="Test Suite 1(failed)">
     <classes>
-      <class name="sanitySuite.TestCase_1_GoogleSearch">
+      <class name="com.online.sanitySuite.TestCase_1_GoogleSearch">
         <methods>
-          <include name="open_url"/>
+          <include name="enter_password_on_enterprise_portal"/>
           <include name="tearDown"/>
+          <include name="enter_email_adress_on_enterprise_portal"/>
+          <include name="click_on_login_on_enterprise_portal"/>
         </methods>
-      </class> <!-- sanitySuite.TestCase_1_GoogleSearch -->
+      </class> <!-- com.online.sanitySuite.TestCase_1_GoogleSearch -->
     </classes>
-  </test> <!-- Default test(failed) -->
-</suite> <!-- Failed suite [Default suite] -->
+  </test> <!-- Test Suite 1(failed) -->
+</suite> <!-- Failed suite [Synerzip-TestAutomation-SanitySuite] -->
