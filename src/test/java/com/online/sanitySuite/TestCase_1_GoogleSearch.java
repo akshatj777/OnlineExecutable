@@ -1,9 +1,9 @@
-package sanitySuite;
+package com.online.sanitySuite;
 
 import org.testng.annotations.Test;
 
-import base.TestBase;
-import pages.Syn_google_search;
+import com.online.base.TestBase;
+import com.online.pages.Syn_google_search;
 
 
 

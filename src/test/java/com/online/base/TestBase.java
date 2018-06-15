@@ -1,4 +1,4 @@
-package base;
+package com.online.base;
 
 import org.apache.log4j.xml.DOMConfigurator;
 import org.openqa.selenium.Point;

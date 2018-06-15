@@ -1,4 +1,4 @@
-package pages;
+package com.online.pages;
 
 /*******************************************************************************************
  * Page Factory class Template
@@ -9,7 +9,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-import base.PageBase;
+import com.online.base.PageBase;
 
 
 public class Syn_google_search extends PageBase {
