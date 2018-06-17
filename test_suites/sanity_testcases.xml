@@ -2,9 +2,11 @@
   
 <suite name="Synerzip-TestAutomation-SanitySuite" verbose="1" parallel="false">
 
-  <test name="Test Suite 1" preserve-order="true" verbose="2" >
+  <test name="Test Suite 1" preserve-order="true" verbose="4" >
+   <parameter name="EPSideMenuPeople" value="People"/>
     <classes>
-           <class name="com.online.sanitySuite.TestCase_1_GoogleSearch" />
+           <class name="com.online.sanitySuite.TestCase_1_Enterprise_Login" />
+     
     </classes>
   </test>
   

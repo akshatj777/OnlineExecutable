@@ -140,9 +140,9 @@ public abstract class TestBase {
 			// Add an argument 'test-type'
 			DesiredCapabilities capabilities = DesiredCapabilities.chrome();
 			ChromeOptions options = new ChromeOptions();
-			options.addArguments("test-type");
-		//	options.addArguments("--headless", "window-size=1280,1024", "--no-sandbox"); // Enable for headless option
-//			capabilities.setCapability("chrome.binary",System.getProperty("user.dir")+ File.separator +"drivers"+ File.separator +"chromedriver.exe");
+	//		options.addArguments("test-type");
+	//		options.addArguments("--headless", "window-size=1280,1024", "--no-sandbox"); // Enable for headless option
+			capabilities.setCapability("chrome.binary",System.getProperty("user.dir")+ File.separator +"drivers"+ File.separator +"chromedriver.exe");
 			capabilities.setCapability(ChromeOptions.CAPABILITY, options);
 			driver = new ChromeDriver(capabilities);
 			log.info(config.getProperty("browser")+" driver is initialized..");

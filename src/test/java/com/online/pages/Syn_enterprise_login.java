@@ -12,9 +12,9 @@ import org.openqa.selenium.support.FindBy;
 import com.online.base.PageBase;
 
 
-public class Syn_google_search extends PageBase {
+public class Syn_enterprise_login extends PageBase {
 
-	public Syn_google_search(WebDriver driver) {
+	public Syn_enterprise_login(WebDriver driver) {
 		super(driver);
 	}
 
@@ -22,7 +22,7 @@ public class Syn_google_search extends PageBase {
 	 * All WebElements are identified by @FindBy annotation
 	 *******************************************************************************************/
 
-	WebDriver driver;
+	
 	// Web Element for Google Search Box
     @FindBy(name = "q")
 	WebElement searchBox;
@@ -48,60 +48,25 @@ public class Syn_google_search extends PageBase {
 	 * @return 
 	 *******************************************************************************************/
 
-	
-    public void enter_emailaddress(String enterpriseemal){
-    	PageBase.wait(4);
-		log.info("Enter text for email address: "+enterpriseemal);
-		searchBox.sendKeys(enterpriseemal);
+	 public void enter_emailaddress(String enterpriseemal){
+	    	PageBase.wait(2);
+			log.info("Enter text for email address: "+enterpriseemal);
+			iWillWaitToSee(emailaddress);
+			iFillInText(emailaddress,enterpriseemal);
+			
+		}
 		
+	    public void enter_Password_EP_Portal(String Enterprisepassword){
+			log.info("Enter text for Password: "+Enterprisepassword);
+	  		iFillInText(EPpassword,Enterprisepassword);
+	  		
+	  	}
+	    
+	    public void click_on_login_EP_Portal(){
+			log.info("Click on Sign In on EP Portal:");
+			clickElement(EPSignIn);
+	  		
+	  	}
+		
+	 
 	}
-	
-    public void enter_Password_EP_Portal(String Enterprisepassword){
-		
-  		log.info("Enter text for Password: "+Enterprisepassword);
-  		searchBox.sendKeys(Enterprisepassword);
-  		
-  	}
-    
-    public void click_on_login_EP_Portal(){
-		log.info("Click on Sign In on EP Portal:");
-		EPSignIn.click();
-  		
-  	}
-	
-	public void enter_text(String Search_text){
-		
-		log.info("Enter text to search: "+Search_text);
-		searchBox.sendKeys(Search_text);
-		
-	}
-	
-	public String get_first_option(){
-		log.info("Select first option displayed by google search");
-		return searchFirstOption.getText();
-		
-	}
-	
-	public void select_first_option(){
-		log.info("Select first option displayed by google search");
-		searchFirstOption.click();
-		
-	}
-
-	/*******************************************************************************************
-	 * This POM method will be exposed in test case
-	 * @param 
-	 *******************************************************************************************/
-
-	public void search_by_first_option(String text_to_search) {
-
-		this.enter_text(text_to_search);
-		
-	}
-	
-	public void click_on_first_search_option () {
-
-		this.select_first_option();
-		
-	}
-}
