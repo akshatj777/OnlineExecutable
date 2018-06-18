@@ -79,6 +79,9 @@ public class Syn_enterprise_Create_New_Student extends PageBase {
 	  
 	  @FindBy(id = "student_registration_submit_action")
 		WebElement Create_Student_Submit;
+	  
+	  @FindBy(xpath = "//*[@id=\"flash_header\"]/div[contains(text(),'Student added successfully')]")
+			WebElement StudentSuccessfullValidationMessage;
 		
 	  public void verify_Create_New_Student_Header_Text(){
 		iWillWaitToSee(CreateNewStudentHeader);
@@ -96,7 +99,7 @@ public class Syn_enterprise_Create_New_Student extends PageBase {
 	  }
 	  
 	  public void enter_email_address(String email){
-		  email=createRandomEmail(email);
+		  email=createRandomEmail(email+"+");
 		  iFillInText(NewStudent_email,email); 
 	  }
 	  
@@ -155,5 +158,9 @@ public class Syn_enterprise_Create_New_Student extends PageBase {
 		  wait(4);
 	  }
 	  
+	  public void verify_Student_Successful_ValidationMessage() {
+		  iWillWaitToSee(StudentSuccessfullValidationMessage);
+		  isElementVisible(StudentSuccessfullValidationMessage);
+	  }
 	  
 }

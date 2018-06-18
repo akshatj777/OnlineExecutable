@@ -484,9 +484,8 @@ public abstract class PageBase {
 		
 		public String createRandomEmail(String username){
 		Random rad = new Random();
-        String email=username+rad.nextInt(5)+"@gmail.com";
+        String email=username+rad.nextInt(1000)+"@execonline.com";
 		return email;  
-        
         }
 		
 		public String createRandomNumber(int num){

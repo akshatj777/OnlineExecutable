@@ -89,13 +89,11 @@ public class TestCase_1_Enterprise_Login extends TestBase{
 		obj_create_new_student.verify_Create_New_Student_Header_Text();
     }
 	
-	@Test (priority=9,dataProvider="Authentication",dataProviderClass = DataProviderWithExcel.class,description = "Fill all the fields on Add Student Form  and submit it on Create Student Page")	
+	@Test (priority=10,dataProvider="Authentication",dataProviderClass = DataProviderWithExcel.class,description = "Fill all the fields on Add Student Form  and submit it on Create Student Page")	
 	public void Submit_Create_Student_Form(String FName,String LName,String Email,
 			String Password,String ConfirmPassword,String Organization,String RegProgram,
 			String Status,String Section,String Team,String Tags) {
 		obj_create_new_student=new Syn_enterprise_Create_New_Student(driver);
-		
-		
 		obj_create_new_student.enter_first_name(FName);
 		obj_create_new_student.enter_last_name(LName);
 		obj_create_new_student.enter_email_address(Email);
@@ -111,6 +109,11 @@ public class TestCase_1_Enterprise_Login extends TestBase{
 		obj_create_new_student.select_tags(Tags);
 		obj_create_new_student.click_on_create_student();
 	}
+	
+	@Test (priority=11, description = "Verify Create New Student Successfull message")	
+	public void Verify_Student_Successful_Message() {
+		obj_create_new_student.verify_Student_Successful_ValidationMessage();
+    }
 	
 	
 	@DataProvider
