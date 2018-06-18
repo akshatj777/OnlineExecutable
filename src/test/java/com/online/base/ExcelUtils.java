@@ -48,7 +48,7 @@ public static void setExcelFile(String Path,String SheetName) throws Exception {
 
 	}
 
-public static Object[][] getTableArray(String FilePath, String SheetName, int iTestCaseRow)    throws Exception
+public static Object[][] getTableArray(String FilePath, String SheetName,int totalCols, int iTestCaseRow)    throws Exception
 
 {   
 
@@ -70,7 +70,7 @@ public static Object[][] getTableArray(String FilePath, String SheetName, int iT
 
 	   int totalRows = 1;
 
-	   int totalCols = 11;
+	   
 
 	   tabArray=new String[totalRows][totalCols];
 

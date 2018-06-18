@@ -15,11 +15,14 @@ public class Syn_enterprise_Sidebar extends PageBase {
 
 	
 	WebElement SideMenuelement;
+	WebElement SideMenuSubOptionElement;
 	// Web Element for Google Search Box
     @FindBy(xpath = "//img[@alt='Logo simple']")
 	WebElement OnlineExecutableLogo;
     @FindBy(xpath = "//span[@class='word' and text()='$text']")
    	WebElement SideMenuButton;
+    @FindBy(xpath = "//a[text()='$text']")
+	WebElement SideMenuSubOptionButton;
 
    
 
@@ -40,4 +43,10 @@ public class Syn_enterprise_Sidebar extends PageBase {
        iWillWaitToSee(SideMenuelement);
        clickElement(SideMenuelement);	
     }
+    
+    public void click_sub_option_text_on_side_menu(String text){
+    	SideMenuSubOptionElement=driver.findElement(By.xpath("//a[text()='"+text+"']"));
+        iWillWaitToSee(SideMenuSubOptionElement);
+        clickElement(SideMenuSubOptionElement);	
+     }
     }

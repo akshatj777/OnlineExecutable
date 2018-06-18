@@ -12,7 +12,9 @@ import org.testng.annotations.Test;
 
 import com.online.base.ExcelUtils;
 import com.online.base.TestBase;
+import com.online.pages.Syn_enterprise_Add_Registrant;
 import com.online.pages.Syn_enterprise_Create_New_Student;
+import com.online.pages.Syn_enterprise_Enrollment;
 import com.online.pages.Syn_enterprise_People;
 import com.online.pages.Syn_enterprise_Sidebar;
 import com.online.pages.Syn_enterprise_login;
@@ -26,6 +28,8 @@ public class TestCase_1_Enterprise_Login extends TestBase{
 	Syn_enterprise_Sidebar obj_enterprise_sidebar;
 	Syn_enterprise_People obj_enterprise_people;
 	Syn_enterprise_Create_New_Student obj_create_new_student;
+	Syn_enterprise_Enrollment obj_enterprise_Enrollment;
+	Syn_enterprise_Add_Registrant obj_enterprise_Add_Registrant;
 	@Test (priority=1, description = "Open Google Search URL")	
 	public void open_url() {
 
@@ -114,6 +118,51 @@ public class TestCase_1_Enterprise_Login extends TestBase{
 	public void Verify_Student_Successful_Message() {
 		obj_create_new_student.verify_Student_Successful_ValidationMessage();
     }
+	
+	@Parameters({ "EPSideMenuEnrollment" })
+	@Test (priority=12, description = "Click  on Enrollment text on side menu")	
+	public void click_on_Enrollment_on_Side_Menu(String EPSideMenuEnrollment) {
+		obj_enterprise_sidebar.click_text_on_side_menu(EPSideMenuEnrollment);
+    }
+	
+	@Parameters({ "EPSideMenuRegisterationEnrollment" })
+	@Test (priority=13, description = "Click  on Registeration text inside Enrollment on side menu")	
+	public void click_on_Registeration_in_Enrollment_on_Side_Menu(String EP_Enroll_Registeration) {
+		obj_enterprise_sidebar.click_sub_option_text_on_side_menu(EP_Enroll_Registeration);
+    }
+	
+	@Test (priority=14,description= "Verify Enrollment Header Text on Enrollment Page")
+	public void verify_Enrollment_header_text(){
+		obj_enterprise_Enrollment=new Syn_enterprise_Enrollment(driver);
+		obj_enterprise_Enrollment.verify_Enrollment_header_text();
+	}
+	
+	
+	@Test (priority=15,description= "Click Add Regisrant on Enrollment Page")
+	public void click_Add_Registrant(){
+		obj_enterprise_Enrollment.click_Add_Registrant_on_Enrollment_Page();
+	}
+	
+	@Test (priority=16,description= "Verify Add Regisrant pop up")
+	public void Verify_add_registrant_pop_up(){
+		obj_enterprise_Add_Registrant=new Syn_enterprise_Add_Registrant(driver);
+		obj_enterprise_Add_Registrant.verify_Add_a_registrant_pop_up();
+	
+	}
+	
+	@Test (priority=17,dataProvider="Add_A_Registrant",dataProviderClass = DataProviderWithExcel.class,description = "Fill all the fields on Add Registrant Page")	
+	public void Submit_Add_registrant_Form(String FName,String LName,String Email,String program,
+			String confirm_program) {
+		obj_enterprise_Add_Registrant.enter_first_name(FName);
+		obj_enterprise_Add_Registrant.enter_last_name(LName);
+		obj_enterprise_Add_Registrant.enter_email_address(Email);
+		obj_enterprise_Add_Registrant.select_program(program);
+		obj_enterprise_Add_Registrant.select_confirm_program(confirm_program);
+	}
+	
+	
+	
+	
 	
 	
 	@DataProvider

@@ -4,6 +4,8 @@
 
   <test name="Test Suite 1" preserve-order="true" verbose="4" >
    <parameter name="EPSideMenuPeople" value="People"/>
+    <parameter name="EPSideMenuEnrollment" value="Enrollment"/>
+    <parameter name="EPSideMenuRegisterationEnrollment" value="Registeration"/>
     <classes>
            <class name="com.online.sanitySuite.TestCase_1_Enterprise_Login" />
      
