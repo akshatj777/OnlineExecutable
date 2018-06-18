@@ -31,7 +31,7 @@ public class Syn_enterprise_Add_Registrant extends PageBase {
 	@FindBy(xpath = "//div[@class='form-group'] //span[@class='EXOInputLabel__text___3KO2u' and contains(text(),'Next Program')]/../following-sibling::div")
 	WebElement Add_A_Registrant_NextProgram_Select_One;
 	
-	@FindBy(css = "Select-option.is-focused")
+	@FindBy(css = "#react-select-14--option-0")
 		WebElement AddRegisternt_Program_Select;
 	
 	@FindBy(xpath="//input[@value='Save Registrant']")
@@ -70,8 +70,6 @@ public class Syn_enterprise_Add_Registrant extends PageBase {
 		  wait(1);
 		  iFillInText(driver.findElement(By.xpath("//div[@class='form-group'] //span[@class='EXOInputLabel__text___3KO2u' and contains(text(),'Next Program')]/../following-sibling::div//div/span/div/following-sibling::div/input")),confirm_program);
 		  delay();
-		  String htm=driver.findElement(By.cssSelector("div.Select-menu-outer")).getAttribute("innerHTML");
-		  System.out.println("@@htm"+htm);
 		  clickElement(AddRegisternt_Program_Select);
 		  wait(1);
 	  }
