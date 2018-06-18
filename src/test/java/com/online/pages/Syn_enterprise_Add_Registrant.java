@@ -31,8 +31,11 @@ public class Syn_enterprise_Add_Registrant extends PageBase {
 	@FindBy(xpath = "//div[@class='form-group'] //span[@class='EXOInputLabel__text___3KO2u' and contains(text(),'Next Program')]/../following-sibling::div")
 	WebElement Add_A_Registrant_NextProgram_Select_One;
 	
-	@FindBy(css = "#react-select-14--option-0")
+	@FindBy(xpath = "//div[contains(text(),'QA Program')]")
 		WebElement AddRegisternt_Program_Select;
+	
+	@FindBy(xpath = "//div[contains(text(),'ExecOnline')]")
+	WebElement AddRegisternt_ConfirmProgram_Select;
 	
 	@FindBy(xpath="//input[@value='Save Registrant']")
 	    WebElement Save_registrant;
@@ -65,12 +68,12 @@ public class Syn_enterprise_Add_Registrant extends PageBase {
 	  }
 	  
 	  public void select_confirm_program(String confirm_program){
-		  delay();
+		  longDelay();
 		  clickElement(Add_A_Registrant_NextProgram_Select_One);
 		  wait(1);
 		  iFillInText(driver.findElement(By.xpath("//div[@class='form-group'] //span[@class='EXOInputLabel__text___3KO2u' and contains(text(),'Next Program')]/../following-sibling::div//div/span/div/following-sibling::div/input")),confirm_program);
 		  delay();
-		  clickElement(AddRegisternt_Program_Select);
+		  clickElement(AddRegisternt_ConfirmProgram_Select);
 		  wait(1);
 	  }
 	  
