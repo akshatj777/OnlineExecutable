@@ -128,16 +128,16 @@ public class enterprise_Create_New_Auditor extends PageBase {
 	  Select_dropdown_text(NewAuditor_Program_Select_One,NewAuditor_Program_Box,program);  
   }
   
-  public void select_student_status(String student_status){
-	  Select_dropdown_text(NewAuditor_StudentStatus_Select_One,NewAuditor_AuditorStatus_Box,student_status);  
+  public void select_auditor_status(String auditor_status){
+	  Select_dropdown_text(NewAuditor_StudentStatus_Select_One,NewAuditor_AuditorStatus_Box,auditor_status);  
   }
   
-  public void select_student_section(String student_section){
-	  Select_dropdown_text_Scroll_to_View(NewAuditor_AuditorSection_Select_One,NewAuditor_AuditorSection_Box,student_section);  
+  public void select_auditor_section(String auditor_section){
+	  Select_dropdown_text_Scroll_to_View(NewAuditor_AuditorSection_Select_One,NewAuditor_AuditorSection_Box,auditor_section);  
   }
   
-  public void select_student_Team(String student_team){
-	  Select_dropdown_text(NewAuditor_AuditorTeam_Select_One,NewAuditor_AuditorTeam_Box,student_team);  
+  public void select_auditor_Team(String auditor_team){
+	  Select_dropdown_text(NewAuditor_AuditorTeam_Select_One,NewAuditor_AuditorTeam_Box,auditor_team);  
   }
   
   public void click_QA_User_checkbox(){
@@ -157,7 +157,7 @@ public class enterprise_Create_New_Auditor extends PageBase {
 	  wait(1);
   }
   
-  public void click_on_create_student(){
+  public void click_on_create_auditor(){
 	  clickElement(Create_Auditor_Submit);
 	  wait(4);
   }
